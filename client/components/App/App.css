@@ -1,0 +1,8 @@
+@import "../../styles/_bootstrap_variables.scss";
+
+.cool-bar {
+  background-color: $brand-success;
+  padding: 1em;
+  border-radius: $border-radius;
+  color: $gray-lightest;
+}

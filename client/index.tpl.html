@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{seo.title}}</title>
+    <meta name="description" content="just another react + webpack boilerplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    {{#each seo.meta}}
+    <meta name="{{title}}" content="{{content}}"> 
+    {{/each}}
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
