@@ -10,7 +10,6 @@ const basePath = process.cwd();
 var config = require(path.join(basePath, '/build/webpack.dev.js'));
 import * as Seo from './utils/seo.js';
 
-
 var paths = {
     distDirectory: path.join(basePath, '/dist/client'),
     defaultHtml: path.join(basePath, '/dist/client/index.hbs')
@@ -38,6 +37,7 @@ if (isDeveloping) {
     });
     app.use(middleware);
     app.use(webpackHotMiddleware(compiler));
+    // app.use(app.static(__dirname + '/images'));
     app.get('*', function response(req, res) {
         middleware.fileSystem.readFile(paths.defaultHtml, 'utf-8', function (err, data) {
             res.write(handlebars.compile(data.toString())({seo: seo}));

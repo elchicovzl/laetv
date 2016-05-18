@@ -6,3 +6,21 @@
   border-radius: $border-radius;
   color: $gray-lightest;
 }
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.border-left {
+	border-style: solid;
+    border-left: thick double #ff00;
+}
+
+.channel-img {
+	height: 100px;
+	width: 200px;
+}
