@@ -44,10 +44,10 @@ class Contact extends React.Component {
 
 ReactDOM.render((
   <Router history={browserHistory}>
-      <Route path="/" component={App}>
-          <Route path="about" component={About} />
-          <Route path="news" component={News} />
-          <Route path="contact" component={Contact} />
+      <Route path="/laetv" component={App}>
+          <Route path="/about" component={About} />
+          <Route path="/news" component={News} />
+          <Route path="/contact" component={Contact} />
       </Route>
   </Router>
 ), document.getElementById('root'))	
