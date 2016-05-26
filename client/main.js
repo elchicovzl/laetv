@@ -45,9 +45,9 @@ class Contact extends React.Component {
 ReactDOM.render((
   <Router history={browserHistory}>
       <Route path="/laetv" component={App}>
-          <Route path="/about" component={About} />
-          <Route path="/news" component={News} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/laetv/about" component={About} />
+          <Route path="/laetv/news" component={News} />
+          <Route path="/laetv/contact" component={Contact} />
       </Route>
   </Router>
 ), document.getElementById('root'))	
