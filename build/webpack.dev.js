@@ -54,6 +54,14 @@ module.exports = {
                     exclude: /node_modules/,
                     loader:'url-loader?limit=1024&name=images/[name].[ext]'
                 },
+                {
+                  test: /\.html$/,
+                  loader: 'html-loader?attrs[]=video:url'
+                },
+                {
+                  test: /\.mp4$/,
+                  loader: 'url?limit=20000&mimetype=video/mp4'
+                },
         ]
     }
 };
