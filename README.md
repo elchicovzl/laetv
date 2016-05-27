@@ -1,2 +1,2 @@
 # laetv
-site angular.net.ve/laetv
+site http://angular.net.ve/laetv
