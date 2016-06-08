@@ -4,7 +4,7 @@ export default class Article extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="articleView">
 				<div className="row">
             		<div className="col-md-8">
                 		<h2><a href="#" >Latin American Ethnic TV is a the largest Hispanic media sales rep in the United States.</a></h2>

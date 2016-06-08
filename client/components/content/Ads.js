@@ -4,7 +4,7 @@ export default class Ads extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="adsView">
 				<div className="row">
 	            	<div className="col-md-2">
 	              		<img src={require('../../images/beinlogo_300.jpg')} className="img-fluid img-rounded channel-img" />

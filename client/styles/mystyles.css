@@ -36,7 +36,6 @@
 	font-size: 24px !important;	
 }
 
-
 .boton {
 	padding-top: 10px;
 	transition: all .2s ease-in-out;
@@ -63,5 +62,167 @@
 video {
 	min-height: 100%;
     min-width: 100%;
+}
+
+.adsMobile {
+	display: none;
+}
+
+
+
+/*
+	Mobile Styles 
+*/
+
+@media screen and (min-width : 480px) {
+ .articleMobile {
+ 	display: none;
+ }
+}
+
+@media screen and (max-width : 480px) {
+
+	.container {
+		padding-top: 20px;
+	}
+
+	.logo {
+		margin-top: 0;
+		padding-bottom: 5px;
+	}
+ 
+	.socialBtn {
+		display:none;
+	}
+
+	.menuNav {
+		margin: 0;
+	}
+
+	.navbar {
+		font-size: 8px;
+		padding: 1px !important;
+		margin: 0;
+	}
+
+	nav {
+		padding: 0;
+
+	}
+
+	nav ul li {
+		margin-left: 25px;
+		
+	}
+
+	.adsView {
+		display: none;
+	}
+
+	.articleView {
+		display: none;
+	}
+
+	.contentView {
+		height: auto;
+	}
+
+	.contentView Video {
+		height: 240px;
+	}
+
+	.login a { 
+		background: red;
+	    color: #fff;
+	    padding: 3px;
+	    margin-top: 4px;
+	    font-size: 7px;
+	}
+
+	.adsMobile {
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		
+	}
+
+	.adsMobile img {
+		width: 100%;
+		height: 60px;
+	}
+
+	.nopadding {
+		padding: 0;
+		margin: 0;
+	}
+
+	.moreChannels {
+		background-color: grey;
+		padding:10px;
+		height: 60px;
+		cursor: pointer;
+		margin: 0;
+		color: #fff;
+	}
+
+	.moreChannels i {
+		font-size: 30px;
+	}
+
+	.moreChannels p {
+		font-size: 8px;
+	}
+
+	.row.no-gutter {
+	  margin-left: 0;
+	  margin-right: 0;
+	}
+
+	.row.no-gutter [class*='col-']:not(:first-child),
+	.row.no-gutter [class*='col-']:not(:last-child) {
+	  padding-right: 0;
+	  padding-left: 0;
+	}
+
+	.channelsView {
+
+	}
+
+	.articleMobile {
+		margin-bottom: 300px;
+		padding-bottom: 300px;
+	}
+
+	.articleMobile ul {
+		background-color: #0bed00;
+		padding-bottom: 5px;
+	}
+
+	.articleMobile ul li {
+		display: inline;
+		padding-left: 3px;
+		padding-right: 2px;
+
+	}
+
+	.articleMobile ul li a{
+		background-color: black;
+		color: #0bed00;
+		padding:5px;
+		font-size: 6px;
+		 border-radius: 25px;
+		 text-decoration: none;
+
+
+	}
+
+	.articleMobile ul li a:hover {
+		color: #fff;
+	}
+
+	.tab-pane p {
+		font-size: 12px;
+	}
+
 }
 

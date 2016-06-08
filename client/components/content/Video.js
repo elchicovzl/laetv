@@ -1,20 +1,27 @@
 import React from 'react';
 import ReactPlayer from 'react-player'
+import Video from 'react-html5video';
 
-export default class Video extends React.Component {
+export default class Videor extends React.Component {
 	constructor(props) {
         super(props)
+        console.log(this.props.video);   
     }
 
 	render() {
 		
+
+
 		return (
-			<div>
-				<div className="col-md-12 col-xs-6 video">
-                	 <ReactPlayer url={this.props.video} playing={true} height={450} />
-                </div>
-			</div>
+			<div className="row">
+				<Video controls autoPlay loop muted width="100%">
+		            <source src={this.props.video} type="video/mp4" />
+		           
+		        </Video>
+            </div>
+		
 		)
+	
 	}
 
 }

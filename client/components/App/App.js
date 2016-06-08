@@ -14,10 +14,10 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
 
-        console.log(this);
-
         this.state = {
-            url : require('../../media/BeinAllsport60secSpa1.mp4'),
+            url        : require('../../media/BeinAllsport60secSpa1.mp4'),
+            defaultVid : true,
+            channelView : true,
             videos : [
                 {id:1,  name: 'video1',  url: require('../../media/Caracol Reel Internacional 2016-1.mp4')},
                 {id:2,  name: 'video2',  url: require('../../media/BeinAllsport60secSpa1.mp4')},
@@ -46,8 +46,11 @@ export default class App extends React.Component {
     changueVideo(video) {
       this.state.videos.map((v) => {
         if(video == v.name) {
+          console.log("seteando ..")
           this.setState({
-            url : v.url
+            url         : v.url,
+            defaultVid  : false,
+            channelView : false,
           })
         }
       });
@@ -59,17 +62,13 @@ export default class App extends React.Component {
       <div>
       
         <div className="container">
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           <div className="row">
             <div className="col-md-8">
               <Header />
-              <Content content={this.props.children} video={this.state.url} />
+              <Content content={this.props.children} video={this.state.url} defaultVid={this.state.defaultVid}  />
             </div>
             <div className="col-md-4">
-              <Channels callbackParent={this.changueVideo.bind(this)} />
+              <Channels callbackParent={this.changueVideo.bind(this)} channelsView={this.state.channelView} />
             </div>
           </div>
         </div>
