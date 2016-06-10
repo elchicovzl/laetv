@@ -134,7 +134,7 @@ export default class Content extends React.Component {
 	                    articleMobile,
 	                    
 	                    <br/>,
-	                    <Ads />,
+	                    <Ads logo={this.props.article.logo} />,
 	                    
 	                    <br/>,
 	                    <br/>,
