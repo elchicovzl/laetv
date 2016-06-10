@@ -17,17 +17,24 @@ module.exports = {
         publicPath: '/laetv/'
     },
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(basePath, 'client/index.tpl.html'),
             inject: 'body',
             filename: 'index.hbs'
         }),
+        new webpack.optimize.OccurenceOrderPlugin(),
+
         new ExtractTextPlugin('[name]-[hash].min.css'),
         new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: {
+              unused: true,
+              dead_code: true,
+              warnings: false,
+              screw_ie8: true
+            },
             compressor: {
-                warnings: false,
-                screw_ie8: true
+                warnings: false
             }
         }),
         new StatsPlugin('webpack.stats.json', {
