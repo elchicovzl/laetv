@@ -3,12 +3,21 @@ import Ads from './Ads';
 import Article from './Article';
 import { render } from 'react-dom'
 import Video from 'react-html5video';
+import classNames from 'classnames';
 
 
 export default class Content extends React.Component {
 	
 	constructor(props) {
     	super(props);
+    	this.state = {
+    		taba : true,
+    		tabb : false,
+    		tabc : false,
+    		tabd : false,
+    		descriptionActivate: false,
+    		defaultVid : this.props.defaultVid,
+    	}
   	}
 
   	reloadVideo() {
@@ -16,6 +25,34 @@ export default class Content extends React.Component {
         this.refs.video.load();
         this.refs.video.play();
     } 
+
+    toggleChannels() {
+    	this.setState({descriptionActivate:true});
+	    this.props.callbackToggle();
+    }
+
+    changeDefaultView() {
+
+    	this.props.callbackDefaultView();
+    }
+
+    tabDesc(tab) {
+
+    	if(tab == 'tab_a') this.setState({ taba : true, tabb : false, tabc : false, tabd : false, descriptionActivate:true });
+    	if(tab == 'tab_b') this.setState({ tabb : true, taba : false, tabc : false, tabd : false, descriptionActivate:true });
+    	if(tab == 'tab_c') this.setState({ tabc : true, taba : false, tabb : false, tabd : false, descriptionActivate:true });
+    	if(tab == 'tab_d') this.setState({ tabd : true, taba : false, tabb : false, tabc : false, descriptionActivate:true });
+    }
+
+
+    shouldComponentUpdate(newProps, newState) {
+    	console.log("updateee...");
+
+    	if(newProps.video !== this.props.video)
+    		this.reloadVideo();
+
+    	return true;
+    }
 	
 	render() {
 
@@ -23,58 +60,70 @@ export default class Content extends React.Component {
 		var adsMobile  = null;
 		var articleMobile = null;
 
-		console.log(this.props);
+		var tabaClass = classNames('tab-pane', {
+	      'active': this.state.taba
+	    });
 
-		if(!this.props.defaultVid) {
-			this.reloadVideo();
+	    var tabbClass = classNames('tab-pane', {
+	      'active': this.state.tabb
+	    });
+
+	    var tabcClass = classNames('tab-pane', {
+	      'active': this.state.tabc
+	    });
+
+	    var tabdClass = classNames('tab-pane', {
+	      'active': this.state.tabd
+	    });
+
+		if(!this.props.defaultVid && this.props.article) {
+			
 			
 			adsMobile = (<div className="row adsMobile no-gutter">
 							<div className="col-md-9 col-xs-9">
-								<img src={require('../../images/beinlogo_300.jpg')} className="img-fluid" />
+								<img src={this.props.article.logo} className="img-fluid" />
 							</div>
-							<div className="col-md-3 col-xs-3 moreChannels">
+							<div className="col-md-3 col-xs-3 moreChannels" id="showLeft" onClick={this.toggleChannels.bind(this)}>
 								<center><i className="fa fa-bars" aria-hidden="true"></i></center>
 								<center><p>More channels</p></center>
 							</div>
 						</div>);
 
-			articleMobile = (<div className="row articleMobile">
-								<ul className="nav nav-pills">
-									<li className="active"><a href="#tab_a">OVERALL DESCRIPTION</a></li>
-									<li><a href="#tab_b">KEY PROGRAMS</a></li>
-									<li><a href="#tab_c">TRAFFIC MATERIAL INSTRUCTIONS</a></li>
-									<li><a href="#tab_d">VIEW PROGRAMMING GRID</a></li>
-								</ul>
-								<div className="tab-content">
-									 <div className="tab-pane active" id="tab_a">
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							        	
-							        </div>
-							        <div className="tab-pane" id="tab_b">
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							        	
-							        </div>
-							        <div className="tab-pane" id="tab_c">
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							        	
-							        </div>
-							        <div className="tab-pane" id="tab_d">
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque repellendus deserunt quis perferendis distinctio hic rerum voluptatum, veritatis! Eos ut eum, temporibus possimus perspiciatis et eaque voluptates modi magnam excepturi.</p>
-							        	
-							        </div>
-								</div>
-							</div>);
-
-
+			
+			articleMobile = (
+				<div className="row articleMobile">
+					<ul className="nav nav-pills">
+						<li className="active"><span onClick={this.tabDesc.bind(this, 'tab_a')}>OVERALL DESCRIPTION</span></li>
+						<li><span onClick={this.tabDesc.bind(this, 'tab_b')}>KEY PROGRAMS</span></li>
+						<li><span onClick={this.tabDesc.bind(this, 'tab_c')}>TRAFFIC MATERIAL INSTRUCTIONS</span></li>
+						<li><span onClick={this.tabDesc.bind(this, 'tab_d')}>VIEW PROGRAMMING GRID</span></li>
+					</ul>
+					<div className="tab-content">
+						 <div className={tabaClass} ref="tab_a">
+				            <p>{this.props.article.description.overalDesc}</p>
+				        </div>
+				        <div className={tabbClass} ref="tab_b">
+				            <p>{this.props.article.description.keyPrograms}</p>
+				        </div>
+				        <div className={tabcClass} ref="tab_c">
+				            <p>{this.props.article.description.trafficMT}</p>
+				        </div>
+				        <div className={tabdClass} ref="tab_d">
+				            <p>{this.props.article.description.viewProgGrid}</p>
+				        </div>
+					</div>
+				</div>
+			);
 		}
 
 		if(this.props.content) {
+
+			if(this.props.channelsView)
+				this.changeDefaultView();
+
 			view = this.props.content;
 		}else {
+			
 			view = [	adsMobile,
 						<div className="row">
 							<Video controls autoPlay loop muted width="100%" ref="video">
@@ -93,8 +142,6 @@ export default class Content extends React.Component {
 					]
 		}
 
-		console.log("video set");
-		
 		return (
 				<div className="contentView">
 					{view}

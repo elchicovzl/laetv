@@ -9,19 +9,19 @@ export default class Nav extends React.Component {
 				<nav className="navbar navbar-light bg-faded">
                   <ul className="nav navbar-nav">
                     <li className="nav-item active">
-                      <Link to="/laetv" className="nav-link font-weight-bold" activeClassName="active">WHO WE ARE</Link>
+                      <center><Link to="/laetv/" className="nav-link font-weight-bold" activeClassName="active">WHO WE ARE</Link></center>
                     </li>
                     <li className="nav-item">
-                    <Link to="/laetv/about" className="nav-link font-weight-bold" activeClassName="active">ABOUT US</Link>
+                      <center><Link to="/laetv/about" className="nav-link font-weight-bold" activeClassName="active">ABOUT US</Link></center>
                     </li>
                     <li className="nav-item">
-                      <Link to="/laetv/news" className="nav-link font-weight-bold" activeClassName="active">NEWS</Link>
+                      <center><Link to="/laetv/news" className="nav-link font-weight-bold" activeClassName="active">NEWS</Link></center>
                     </li>
                     <li className="nav-item">
-                      <Link to="/laetv/contact" className="nav-link font-weight-bold" activeClassName="active">CONTACT</Link>
+                      <center><Link to="/laetv/contact" className="nav-link font-weight-bold" activeClassName="active">CONTACT</Link></center>
                     </li>
                     <li className="nav-item login">
-                      <Link to="#" className="nav-link font-weight-bold" activeClassName="active">CLIENT LOGIN</Link>
+                      <center><Link to="#" className="nav-link font-weight-bold" activeClassName="active">CLIENT LOGIN</Link></center>
                     </li>
                   </ul>
                 </nav>

@@ -8,7 +8,7 @@ export default class Header extends React.Component {
 		return (
 			<div>
 				<div className="row">
-					<div className="col-md-11">
+					<div className="col-md-11 col-xs-11">
 						<Logo />
 					</div>
 					<div className="col-md-1">
@@ -17,7 +17,7 @@ export default class Header extends React.Component {
 				</div>
 
 				<div className="row">
-					<div className="col-md-11">
+					<div className="col-md-12 col-xs-12">
 						<Nav />
 					</div>
 				</div>

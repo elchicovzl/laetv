@@ -44,6 +44,11 @@
 	cursor:pointer;
 }
 
+.boton a img {
+	width: 150px;
+	height: 100px;
+}
+
 .boton:hover {
 	transform: scale(1.1);
 	-webkit-transform: scale(1.1);
@@ -52,7 +57,13 @@
 }
 
 .logo {
+	padding-top: 100px;
 	padding-bottom: 30px;
+}
+
+.logo img{
+	width:500px; 
+	height:100px;
 }
 
 .page {
@@ -67,6 +78,15 @@ video {
 .adsMobile {
 	display: none;
 }
+
+.menuNav ul li {
+	width: 20%;
+	padding-left: 0 !important;
+	padding-bottom: 0 !important;
+	margin-left: 0 !important;
+}
+
+
 
 
 
@@ -110,9 +130,11 @@ video {
 
 	}
 
-	nav ul li {
-		margin-left: 25px;
-		
+	.nav-item {
+		width: 20%;
+		padding-left: 0 !important;
+		padding-bottom: 0 !important;
+		margin-left: 0 !important;
 	}
 
 	.adsView {
@@ -133,7 +155,7 @@ video {
 
 	.login a { 
 		background: red;
-	    color: #fff;
+	    color: #fff !important;
 	    padding: 3px;
 	    margin-top: 4px;
 	    font-size: 7px;
@@ -184,9 +206,7 @@ video {
 	  padding-left: 0;
 	}
 
-	.channelsView {
-
-	}
+	
 
 	.articleMobile {
 		margin-bottom: 300px;
@@ -205,23 +225,160 @@ video {
 
 	}
 
-	.articleMobile ul li a{
+	.articleMobile ul li span{
 		background-color: black;
 		color: #0bed00;
 		padding:5px;
 		font-size: 6px;
 		 border-radius: 25px;
 		 text-decoration: none;
+		 cursor: pointer;
 
 
 	}
 
-	.articleMobile ul li a:hover {
+	.articleMobile ul li span:hover {
 		color: #fff;
 	}
 
-	.tab-pane p {
+	.tab-pane p { 
 		font-size: 12px;
+	}
+	
+	.socialFooter ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	.socialFooter  i{
+		font-size: 20px;
+	}
+
+	.copyFooter > span {
+		font-size: 7px;
+	}
+
+	.navFooter {
+		display: none;
+	}
+
+
+
+	.cbp-spmenu {
+		background: #2b2727;
+		position: fixed;
+		z-index: 9999;
+		top: 0;
+		height: 100%;
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.cbp-spmenu a {
+		display: block;
+		color: #2b2727;
+		font-size: 1.1em;
+		font-weight: 300;
+	}
+
+	.cbp-spmenu a:hover {
+		background: #2b2727;
+	}
+
+	.cbp-spmenu a:active {
+		background: #2b2727;
+		color: #2b2727;
+	}
+
+	.cbp-spmenu-vertical {
+		font-size: 90%;
+		width: 190px;
+	}
+
+	.cbp-spmenu-vertical a {
+		border-bottom: 1px solid #2b2727;
+	}
+
+	.cbp-spmenu-left.cbp-spmenu-open {
+		left: 0px;
+	}
+
+	.cbp-spmenu-left,
+	.cbp-spmenu-push-toleft {
+		left: -190px;
+	}
+
+	.cbp-spmenu-right {
+		right: -190px;
+	}
+
+	.cbp-spmenu-push-toright {
+		left: 190px;
+	}
+
+	.cbp-spmenu,
+	.cbp-spmenu-push {
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+	}
+	
+	.img-big {
+		height: 400px;
+	}
+
+	.channelsView {
+		display: inline;
+	}
+
+	.boton a img {
+		width: 100%;
+	}
+	
+	.col-md-6.col-xs-6 {
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
+	.col-md-11.col-xs-11 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.col-md-12.col-xs-12 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.botonTogg {
+		padding: 2px;
+		transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		-moz-transition: all .2s ease-in-out;
+	}
+
+	.botonTogg:hover {
+		transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-o-transform: scale(1.1);
+	}
+
+	.botonTogg a img {
+		height: 50px;
+		width: 100%;
+	}
+
+	.logo {
+		padding-top: 30px;
+		padding-bottom: 20px;
+		padding-left: 50px;
+	}
+
+	.logo img{
+		width: 250px;
+		height: 80px;
 	}
 
 }

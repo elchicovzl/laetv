@@ -12,9 +12,9 @@ export default class Video extends React.Component {
 		                        <h5>WAYS TO WATCH THE CHANNELS</h5>
 		                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quia, ullam, ipsum consequuntur nisi nihil facere aspernatur culpa laudantium recusandae. Pariatur, libero totam nulla facere est velit. Non, quidem, voluptatem?</p>
 		                    </div>
-		                    <div className="col-md-3 social">
+		                    <div className="col-md-3 socialFooter">
 		                          <h5>FOLLOW US</h5>
-		                        <ul style={{fontSize:'24px'}} >
+		                        <ul>
 		                          <li><a href="#"><i className="fa fa-facebook-official"></i></a></li>
 		                          <li><a href="#"><i className="fa fa-twitter-square"></i></a></li>
 		                          <li><a href="#"><i className="fa fa-youtube"></i></a></li>
@@ -22,10 +22,10 @@ export default class Video extends React.Component {
 		                    </div>
 		                </div>
 		                <div className="row">
-		                  <div className="col-md-6">
+		                  <div className="col-md-6 copyFooter">
 		                    <span>2016 Latinamerica Ethnic TV, Inc. All Rights Reserved. This website may contain mature content.</span>
 		                  </div>
-		                  <div className="col-md-6">
+		                  <div className="col-md-6 navFooter">
 		                    <ul>
 		                      <li><a href="#">Privacy</a></li>
 		                      <li><a href="#">Terms</a></li>
