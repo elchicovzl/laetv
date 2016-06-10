@@ -23,11 +23,24 @@ module.exports = {
             filename: 'index.hbs'
         }),
         new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.DedupePlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: {
+              unused: true,
+              dead_code: true,
+              warnings: false,
+              screw_ie8: true
+            },
+            compressor: {
+              warnings: false
+            }
+       })
     ],
     module: {
         loaders: [{

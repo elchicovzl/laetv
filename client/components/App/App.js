@@ -295,18 +295,6 @@ export default class App extends React.Component {
         toggleChannels : !this.state.toggleChannels
       });
     }
-
-    componentWillReceiveProps(nextProps) {
-
-
-      // if(nextProps.location.pathname == '/laetv/') {
-      //   this.setState ({
-      //     channelView : true,
-      //     toggleChannels: false
-
-      //   });
-      // }
-    }
       
   render() {
 
