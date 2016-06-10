@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.join(basePath, '/dist/client'),
         filename: '[name]-[hash].min.js',
-        publicPath: '/laetv/'
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({

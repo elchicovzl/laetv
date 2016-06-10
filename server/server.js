@@ -49,7 +49,7 @@ if (isDeveloping) {
     app.set('view engine', '.hbs');
     app.set('views', paths.distDirectory);
     app.use(express.static(paths.distDirectory));
-    app.get('*', function response(req, res) {
+    app.get('/laetv/*', function response(req, res) {
         res.render('index', {
             seo: seo
         });
