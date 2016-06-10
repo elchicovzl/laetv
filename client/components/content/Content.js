@@ -123,6 +123,12 @@ export default class Content extends React.Component {
 
 			view = this.props.content;
 		}else {
+			var logos = '';
+			if(this.props.article) {
+				logos = this.props.article.logo;
+			}else {
+				logos = require('../../images/beinlogo_300.jpg');
+			}
 			
 			view = [	adsMobile,
 						<div className="row">
@@ -134,7 +140,7 @@ export default class Content extends React.Component {
 	                    articleMobile,
 	                    
 	                    <br/>,
-	                    <Ads logo={this.props.article.logo} />,
+	                    <Ads logo={logos} />,
 	                    
 	                    <br/>,
 	                    <br/>,
