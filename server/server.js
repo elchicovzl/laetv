@@ -49,8 +49,9 @@ if (isDeveloping) {
     app.set('view engine', '.hbs');
     app.set('views', paths.distDirectory);
     app.use(express.static(paths.distDirectory));
-    app.get('/*', function response(req, res) {
-        res.render('index', {
+    app.get('*', function response(req, res) {
+        console.log(req.url);
+        res.render('laetv/index', {
             seo: seo
         });
     });

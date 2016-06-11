@@ -12,9 +12,8 @@ module.exports = {
         path.join(basePath, 'client/main.js')
     ],
     output: {
-        path: path.join(basePath, '/dist/client'),
-        filename: '[name]-[hash].min.js',
-        publicPath: '/'
+        path: path.join(basePath, '/dist/client/laetv'),
+        filename: '[name]-[hash].min.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
